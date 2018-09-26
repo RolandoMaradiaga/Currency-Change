@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+ int monto_ingresado;
+const int peso_precio {100};
+const int centavo_precio {1};
+const int moneda_de_25 {25};
+const int toston_precio {50};
+
+int main()
+{
+    cout << "Ingrese monto en centavos: ";
+    cin >> monto_ingresado;
+    int balance;
+    int peso;
+    int centavo;
+    int moneda_25;
+    int toston;
+    //224
+    peso = monto_ingresado/ peso_precio;
+    balance=monto_ingresado%peso_precio;
+    
+    toston = balance / toston_precio;
+    balance %= toston_precio; 
+    
+    moneda_25 = balance / moneda_de_25;
+    balance %= moneda_de_25;
+    
+    centavo = balance;
+    
+    cout << "\nPesos: " << peso;
+    cout << "\nToston: " <<  toston;
+    cout << "\n25s: " << moneda_25;
+    cout << "\nCentavos: " << centavo << "\n";
+    
+}
